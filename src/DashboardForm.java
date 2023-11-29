@@ -33,27 +33,6 @@ public class DashboardForm extends JFrame{
         });
 
 
-//
-//        Connection con;
-//        PreparedStatement pst;
-//
-//        private void connect(){
-//            try {
-//                Class.forName("com.mysql.jdbc.Driver");
-//                con = DriverManager.getConnection("jdbc:mysql://localhost/rbcompany", "root","");
-//                System.out.println("Successs");
-//            }
-//            catch (ClassNotFoundException ex)
-//            {
-//                ex.printStackTrace();
-//
-//            }
-//            catch (SQLException ex)
-//            {
-//                ex.printStackTrace();
-//            }
-//        }
-
 
         changePinButton.addActionListener(new ActionListener() {
             @Override
@@ -71,7 +50,7 @@ public class DashboardForm extends JFrame{
                     preparedStatement.setString(1, m);
                     preparedStatement.setString(2, name);
                     preparedStatement.executeUpdate();
-
+                    JOptionPane.showMessageDialog(null, "Pin is now updated to " + m);
                 }catch (SQLException e1){
                     e1.printStackTrace();
                 }
@@ -81,9 +60,14 @@ public class DashboardForm extends JFrame{
 
 
         logoutButton.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
+                dashboardPanel.setVisible(false);
                 dispose();
+                LoginForm myLoginForm = new LoginForm(null);
+                myLoginForm.setVisible(true);
+
             }
         });
     }
