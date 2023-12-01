@@ -41,13 +41,15 @@ public class RegistrationForm extends JDialog{
         });
 
         btnLogin.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource()==btnLogin){
-                    LoginForm myLoginForm = new LoginForm(null);
-                    myLoginForm.setVisible(true);
                     registerPanel.setVisible(false);
                     dispose();
+                    LoginForm myLoginForm = new LoginForm(null);
+                    myLoginForm.setVisible(true);
+
                 }
             }
         });

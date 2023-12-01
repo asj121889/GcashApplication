@@ -36,10 +36,11 @@ public class LoginForm extends JDialog{
                 if(user != null){
 
                     if(e.getSource()==btnOk){
+                        //dispose();
+                        loginPanel.setVisible(false);
                         DashboardForm myDashboardForm = new DashboardForm(user.name);
                         myDashboardForm.setVisible(true);
-                        dispose();
-                        loginPanel.setVisible(false);
+
                     }
 
                 }else{
